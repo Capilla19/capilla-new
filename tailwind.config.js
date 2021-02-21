@@ -4,7 +4,7 @@ module.exports = {
   theme: {
     fontfamily: {
       bree: ['Bree Serif', 'serif'],
-      dancnig: ['Dancing Script', 'cursive'],
+      dancing: ['Dancing Script', 'cursive'],
       anton: ['Anton', 'sans-serif'],
     },
     extend: {
