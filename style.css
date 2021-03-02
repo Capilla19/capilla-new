@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'icomoon';
-  src:  url('fonts/icomoon.eot?qkhdkk');
-  src:  url('fonts/icomoon.eot?qkhdkk#iefix') format('embedded-opentype'),
-    url('fonts/icomoon.ttf?qkhdkk') format('truetype'),
-    url('fonts/icomoon.woff?qkhdkk') format('woff'),
-    url('fonts/icomoon.svg?qkhdkk#icomoon') format('svg');
+  src:  url('fonts/icomoon.eot?18b6x2');
+  src:  url('fonts/icomoon.eot?18b6x2#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?18b6x2') format('truetype'),
+    url('fonts/icomoon.woff?18b6x2') format('woff'),
+    url('fonts/icomoon.svg?18b6x2#icomoon') format('svg');
   font-weight: normal;
   font-style: normal;
   font-display: block;
@@ -13,6 +13,7 @@
 [class^="icon-"], [class*=" icon-"] {
   /* use !important to prevent issues with browser extensions that change fonts */
   font-family: 'icomoon' !important;
+  speak: never;
   font-style: normal;
   font-weight: normal;
   font-variant: normal;
@@ -38,6 +39,12 @@
 }
 .icon-menu:before {
   content: "\e9bd";
+}
+.icon-sun:before {
+  content: "\e9d4";
+}
+.icon-brightness-contrast:before {
+  content: "\e9d6";
 }
 .icon-embed2:before {
   content: "\ea80";
