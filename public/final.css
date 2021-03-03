@@ -96,7 +96,7 @@ body {
 }
 
 [data-theme="dark"] {
-  --primary-color: #000000;
+  --primary-color: #fff;
   --bg-color: #000000;
   --secondary-color: #ff3366;
 }
@@ -204,11 +204,11 @@ input:checked + .slider:before {
 }
 
 .slider__btn--left {
-  left: 10px;
+  left: 25px;
 }
 
 .slider__btn--right {
-  right: 10px;
+  right: -10px;
 }
 
 /*! tailwindcss v2.0.3 | MIT License | https://tailwindcss.com */
