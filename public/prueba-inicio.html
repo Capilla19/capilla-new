@@ -84,6 +84,27 @@
             </label>
         </div>
     </nav>
+    <div class="container-slider">
+      <div class="cambio" id="slider">
+        <div class="slider__section flex">
+          <h1 class="">Diseño 3D</h1>
+          <h2 class="">Aprende diseño 3D en Autodesk Inventor</h2>
+          <img src="img/render-robot.jpeg"class="slider__img">
+        </div>
+        <div class="slider__section flex">
+          <h1>Mecanica</h1>
+          <h2>Aprende a ensamblar un Robot</h2>
+          <img src="img/mecanica-1.jpg"class="slider__img">
+        </div>
+        <div class="slider__section flex">
+          <h1>Programación</h1>
+          <h2>Aprende a programar un Robot</h2>
+          <img src="img/programar.png"class="slider__img">
+        </div>
+      </div>
+      <div class="slider__btn slider__btn--right" id="btn-right">&#62;</div>
+      <div class="slider__btn slider__btn--left" id="btn-left">&#60;</div>
+    </div>
     <!--modo nocturno--><script>
         const colorSwitch = document.querySelector ('.theme-switch input[type="checkbox"]');
         function switchColor(e) {
@@ -96,5 +117,6 @@
         colorSwitch.addEventListener('change', switchColor,false)
     </script>
     <script src="app.js"></script>
+    <script src="slider.js"></script>
 </body>
 </html>
