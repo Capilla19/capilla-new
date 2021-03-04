@@ -1,16 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Anton&family=Ballet&family=Bree+Serif&family=Dancing+Script:wght@400;500;600;700&display=swap');
-.menu-li {
-    @apply text-white list-none p-5 text-lg hidden;
-}
 
-.texto{
-	@apply text-gray-700 lg:text-white;
+.formato {
+	@apply block lg:inline-block lg:mt-0 hover:text-blue-300
 }
-
-.texto-titulos{
-	@apply w-full text-center p-2 text-gray-700 m-2 text-2xl lg:text-white;
-}
-
 input::placeholder {
 	color: #718096;
 	font-weight: 300;
@@ -149,6 +141,33 @@ input:checked + .slider:before {
 }
 .slider__btn--right {
 	right: -10px;
+}
+#menu ul {
+  display: flex;
+  justify-content: center;
+}
+#menu ul ul{
+  display: none;
+  width: auto;
+  height: auto;
+}
+#menu a {
+  display: block;
+  text-decoration: none;
+}
+#menu a span {
+  margin-left: 5px;
+}
+#menu ul li:hover ul {
+  display: block;
+  position: absolute;
+}
+
+.btn {
+    @apply py-2 px-4 font-semibold rounded-lg shadow-md;
+}
+.btn-green {
+    @apply text-white bg-green-500 hover:bg-green-700;
 }
 @tailwind base;
 @tailwind components;
