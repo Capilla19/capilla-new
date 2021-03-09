@@ -14,7 +14,7 @@
   <!--barra de navegación-->
     <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-4 list-none text-black bg-gray-400 m-2">
       <div class="flex items-center flex-shrink-0 lg:hidden">
-        <a href="prueba-inicio.html"><img src="img/kuayolo.png" width="150" height="50"></a>
+        <a href="inicio.html"><img src="img/kuayolo.png" width="150" height="50"></a>
       </div>
       <div class="block lg:hidden">
         <button id="boton" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-black hover:border-black">
@@ -29,7 +29,7 @@
           <li><a href="nosotros.html" class="formato text-teal-200">Nosotros</a></li>
           <li><a href="mision-vision.html" class="formato text-teal-200">Misión & Visión</a></li>
           <li><a href="contactanos.html" class="formato text-teal-200">Contactanos</a></li>
-          <li><a href="prueba-inicio.html">
+          <li><a href="inicio.html">
             <img src="img/kuayolo.png" width="200" height="100" class="hidden lg:block">
           </a></li>
           <li><a href="valores.html" class="formato text-teal-200">Valores</a></li>
@@ -43,6 +43,11 @@
           <li><a href="inicio-registro.php" class="formato text-teal-200" id="iniciar">Iniciar Sesión / Registrase</a></li>
           <!--<li><a href="php/cerrar_sesion.php" class="lg:hidden formato text-teal-200" id="cerrar">Cerrar sesión</a></li>-->
         </ul>
+        <!--Buscador-->
+        <div id="ctn-icon-search">
+          <i class="icon icon-search formato" id="icon-search"></i>
+        </div>
+        <!--switch modo nocturno-->
         <div class="theme-switch-wrapper hidden lg:inline-block">
             <label class="theme-switch" for="checkbox">
                 <input type="checkbox" id="checkbox">
@@ -51,7 +56,19 @@
         </div>
       </ul>
     </nav>
+    <div id="ctn-bars-search" class="m-2 hidden">
+      <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+    </div>
+
+    <ul id="box-search">
+      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Diseño 3D</a></li>
+      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Mecánica</a></li>
+      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Programación</a></li>
+      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Diseño del juego</a></li>
+    </ul>
+    <!--fondo busqueda--><div id="cover-ctn-search"></div>
     <!--texto-->
+    <div id="cuerpo_pag">
     <section class="p-5 w-full block font-bold">
       <h2 class="text-center">¡Bienvenido!</h2>
       <h1 class="lg:w-1/2 flex">Queremos darte la más cordial bienvenida a estos cursos digitales; una filosofía que promueve una educación armónica, integral y por competencias tendente al desarrollo no sólo académico, sino también a la formación de valores para afrontar la vida diaria.<br/>¿No cuentas con los conocimientos de mecánica, diseño programación? ¡no te preocupes! En este curso, aplicarás los conocimientos básicos para construir y controlar robots. Parece complicado, pero no se preocupe, lo encontrará muy simple. El único requisito es que esté interesado en aprender sobre robots.</h1>
@@ -122,6 +139,7 @@
         2021 Cursos de Robótica | Todos los derechos reservados a KUAYOLO
       </p>
     </footer>
+    </div>
     <script src="app.js"></script>
     <script src="slider.js"></script>
 </body>

@@ -26,7 +26,7 @@
     }
     //verifica que nombre de usuario no se repita en la base de datos
     $verificar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario = '$usuario' ");
-    if(mysqli_num_rows($verificar_correo) > 0 ) {
+    if(mysqli_num_rows($verificar_usuario) > 0 ) {
         echo '
             <script>
             alert("Este usuario ya esta registrado, intenta con otro diferente");
