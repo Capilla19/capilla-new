@@ -38,9 +38,9 @@ btnleft.addEventListener('click' , function(){
     Prev();
 })
 
-setInterval(function() {
+/*setInterval(function() {
     Next()
-}, 5000);
+}, 5000);*/
 
 $(".submenu").click(function() {
     $(this).children("ul").slideToggle();

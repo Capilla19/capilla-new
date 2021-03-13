@@ -14,7 +14,7 @@
   <!--barra de navegación-->
     <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-4 list-none text-black bg-gray-400 m-2">
       <div class="flex items-center flex-shrink-0 lg:hidden">
-        <a href="inicio.html"><img src="img/kuayolo.png" width="150" height="50"></a>
+        <a href="inicio2.html"><img src="img/kuayolo.png" width="150" height="50"></a>
       </div>
       <div class="block lg:hidden">
         <button id="boton" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-black hover:border-black">
@@ -29,7 +29,7 @@
           <li><a href="nosotros.html" class="formato text-teal-200">Nosotros</a></li>
           <li><a href="mision-vision.html" class="formato text-teal-200">Misión & Visión</a></li>
           <li><a href="contactanos.html" class="formato text-teal-200">Contactanos</a></li>
-          <li><a href="inicio.html">
+          <li><a href="inicio2.html">
             <img src="img/kuayolo.png" width="200" height="100" class="hidden lg:block">
           </a></li>
           <li><a href="valores.html" class="formato text-teal-200">Valores</a></li>
@@ -40,8 +40,12 @@
               <li><a href="programacion.html" class="icon icon-code hover:text-blue-300"> Programación</a></li>
             </ul>
           </li>
-          <li><a href="inicio-registro.php" class="formato text-teal-200" id="iniciar">Iniciar Sesión / Registrase</a></li>
-          <!--<li><a href="php/cerrar_sesion.php" class="lg:hidden formato text-teal-200" id="cerrar">Cerrar sesión</a></li>-->
+          <li class="submenu"><a href="#" class="formato text-teal-200">Usuario<span class="icon icon-cheveron-down"></span></a>
+            <ul class="bg-gray-400 lg:text-base space-y-2.5 m-2 p-3.5">
+              <li><a href="" class="icon icon-user-solid-circle hover:text-blue-300"> Perfil</a></li>
+              <li><a href="" class="icon icon-cog hover:text-blue-300"> Configuración</a></li>
+              <li><a href="php/cerrar_sesion.php" class="icon icon-log-out hover:text-blue-300"> Cerrar sesión</a></li>
+            </ul>
         </ul>
         <!--Buscador-->
         <div id="ctn-icon-search">
@@ -66,7 +70,7 @@
       <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Programación</a></li>
       <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Diseño del juego</a></li>
     </ul>
-    <!--fondo busqueda--><div id="cover-ctn-search"></div>
+    <!--fondo busqueda--><div id="cover-ctn-search"class="hidden"></div>
     <!--texto-->
     <div id="cuerpo_pag">
     <section class="p-5 w-full block font-bold">

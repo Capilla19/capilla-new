@@ -1,37 +1,34 @@
 <?php
-
     session_start();
-    include 'conexion_be.php';
-
-    $correo = $_POST['correo'];
-    $usuario = $_POST['usuario'];
-    $contrasena = $_POST['contrasena'];
-    $contrasena = hash('sha512', $contrasena);
-
-    $validar_login = mysqli_query($conexion, "SELECT * FROM usuarios WHERE correo='$correo' and contrasena='$contrasena'");
-    $validar_usuario = mysqli_query($conexion, "SELECT * FROM usuarios WHERE usuario='$usuario'");
-
-    if(mysqli_num_rows($validar_usuario)) {
-
-    }
-
-    if(mysqli_num_rows($validar_login) > 0 ) {
-        $_SESION ['usuario'] = $correo;
+    // Define $username y $password
+    $username=$_POST['correo'];
+    $password=$_POST['contrasena'];
+    // Estableciendo la conexion a la base de datos    
+    include ("conexion_be.php");
+    // Para proteger de Inyecciones SQL 
+    $username    = mysqli_real_escape_string($conexion,(strip_tags($username,ENT_QUOTES)));
+    $sql = "SELECT correo, contrasena FROM usuarios WHERE correo = '$username ' and contrasena='$password'";
+    $query=mysqli_query($conexion,$sql);
+        echo "<br/>";
+        echo $username;
+        echo "<br/>";
+        echo $password;
+    //$counter=mysqli_num_rows($query);
+    if(mysqli_num_rows($query) == mysqli_num_rows($query) ) {
+        $_SESSION['usuario'] = $username;
         echo '
         <script>
             alert("Bienvenido");
-            window.location = "../inicio.html";
+            window.location = "../inicio.php";
         </script>
-        ';
-        exit;
+        '; 
     }else{
         echo '
-        <script>
-            alert("Usuario no existente, por favor verificar los datos introducidos");
-            window.location = "..inicio-registro.php";
-        </script>
-        ';
-        exit;
+            <script>
+                alert("Usuario no existente, por favor verificar los datos introducidos");
+                window.location = "../inicio-registro.php";
+            </script>
+            ';
     }
 
 ?>

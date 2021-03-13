@@ -14,14 +14,14 @@ boton.addEventListener('click', () => {
 icono.addEventListener('click', () => {
     console.log('click')
     bars_search.classList.toggle('hidden')
+    cover_ctn_search.classList.toggle('hidden')
     inputSearch.focus();
-    cover_ctn_search.style.display = "block";
     box_search.style.display = "none";
 })
 cover_ctn_search.addEventListener('click', () => {
     console.log('click')
     bars_search.classList.toggle('hidden')
-    cover_ctn_search.style.display = "none";
+    cover_ctn_search.classList.toggle('hidden')
     inputSearch.value = "";
 })
 

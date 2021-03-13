@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="final.css">
+    <link rel="stylesheet" href="../final.css">
     <title>Iniciar sesión/Registrarse</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/kuayolo-icon.png"/>
 </head>
@@ -29,14 +29,14 @@
             <!--Formulario de login y registro-->
             <div class="contenedor__login-register">
                 <!--Login-->
-                <form action="php/login_usuario_be.php" method="POST"class="formulario__login">
+                <form action="si.php" method="POST"class="formulario__login">
                     <h2>Iniciar sesión</h2>
                     <input type="text" placeholder="Correo electronico" name="correo">
                     <input type="password" placeholder="Contraseña" name="contrasena">
                     <button>Entrar</button>
                 </form>
                 <!--Registro-->
-                <form action="php/registro_usuario_be.php" method="POST" class="formulario__register">
+                <form action="registro_usuario_be.php" method="POST" class="formulario__register">
                     <h2>Registrarse</h2>
                     <input type="text" placeholder="Nombre completo" name="nombre_completo">
                     <input type="text" placeholder="Correo electronico" name="correo">
