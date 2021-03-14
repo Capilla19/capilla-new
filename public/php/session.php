@@ -11,7 +11,7 @@ if(isset($_SESSION ['usuario'])){
     $ses_sql=mysqli_query($conexion, "SELECT correo FROM usuarios WHERE correo='$user_check'");
     $row = mysqli_fetch_assoc($ses_sql);
     $login_session =$row['correo'];
-    if(!isset($login_sessoin)){
+    if(!isset($login_session)){
     mysqli_close($conexion); // Cerrando la conexion
     }
 }

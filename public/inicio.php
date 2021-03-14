@@ -58,7 +58,7 @@ include('php/session.php');
                 }
             ?></a>
             <ul class="bg-gray-400 lg:text-base space-y-2.5 m-2 p-3.5">
-              <li><a href="" class="icon icon-user-solid-circle hover:text-blue-300"> Perfil</a></li>
+              <li><a href="../perfil/perfil.php" class="icon icon-user-solid-circle hover:text-blue-300"> Perfil</a></li>
               <li><a href="" class="icon icon-cog hover:text-blue-300"> Configuración</a></li>
               <li><a href="php/cerrar_sesion.php" class="icon icon-log-out hover:text-blue-300"> Cerrar sesión</a></li>
             </ul>

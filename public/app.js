@@ -48,3 +48,7 @@ function buscador_interno (){
         }
     }
 }
+
+$(".submenu").click(function() {
+    $(this).children("ul").slideToggle();
+})
