@@ -1,49 +1,45 @@
 <?php
-	include('is_logged.php');//Archivo verifica que el usario que intenta acceder a la URL esta logueado
-	/*Inicia validacion del lado del servidor*/
-	if (empty($_POST['nombre_apellido'])) {
-           $errors[] = "nombre_apellido esta vacío";
-        }else if (empty($_POST['ocupacion'])) {
-           $errors[] = "ocupacion esta vacío";
+	if (empty($_POST['nombre_completo'])) {
+           $errors[] = "nombre_completo esta vacío";
+        }else if (empty($_POST['usuario'])) {
+           $errors[] = "usuario esta vacío";
         } else if (empty($_POST['correo'])) {
            $errors[] = "correo esta vacío";
-        } else if (empty($_POST['telefono'])) {
-           $errors[] = "telefono esta vacío";
-        } else if (empty($_POST['salario'])) {
-           $errors[] = "salario esta vacío";
+        } else if (empty($_POST['celular'])) {
+           $errors[] = "celular esta vacío";
+        } else if (empty($_POST['fecha_nac'])) {
+           $errors[] = "fecha_nac esta vacío";
+        } else if (empty($_POST['genero'])) {
+           $errors[] = "genero esta vacío";
         } else if (empty($_POST['idioma'])) {
            $errors[] = "idioma esta vacío";
-        } else if (empty($_POST['ciudad'])) {
-           $errors[] = "ciudad esta vacío";
         }   else if (
-			!empty($_POST['nombre_apellido']) &&
-			!empty($_POST['ocupacion']) &&
+			!empty($_POST['nombre_completo']) &&
+			!empty($_POST['usuario']) &&
 			!empty($_POST['correo']) &&
-			!empty($_POST['telefono']) &&
-			!empty($_POST['salario']) &&
-			!empty($_POST['idioma']) &&
-			!empty($_POST['ciudad']) 
+			!empty($_POST['celular']) &&
+			!empty($_POST['fecha_nac']) &&
+			!empty($_POST['genero']) &&
+			!empty($_POST['idioma'])
 		){
 		/* Connect To Database*/
-		require_once ("../config/db.php");//Contiene las variables de configuracion para conectar a la base de datos
-		require_once ("../config/conexion.php");//Contiene funcion que conecta a la base de datos
+		include("../../public/php/conexion_be.php"); 
+		include('../../public/php/session.php'); 
 		// escaping, additionally removing everything that could be (html/javascript-) code
-		$nombre_apellido=mysqli_real_escape_string($con,(strip_tags($_POST["nombre_apellido"],ENT_QUOTES)));
-		$ocupacion=mysqli_real_escape_string($con,(strip_tags($_POST["ocupacion"],ENT_QUOTES)));
-		$correo=mysqli_real_escape_string($con,(strip_tags($_POST["correo"],ENT_QUOTES)));
-		$telefono=mysqli_real_escape_string($con,(strip_tags($_POST["telefono"],ENT_QUOTES)));
-		$salario=mysqli_real_escape_string($con,(strip_tags($_POST["salario"],ENT_QUOTES)));
-		$idioma=mysqli_real_escape_string($con,(strip_tags($_POST["idioma"],ENT_QUOTES)));
-		$ciudad=mysqli_real_escape_string($con,(strip_tags($_POST["ciudad"],ENT_QUOTES)));
-		$expectativa=mysqli_real_escape_string($con,(strip_tags($_POST["expectativa"],ENT_QUOTES)));
-		$codigo_postal=mysqli_real_escape_string($con,(strip_tags($_POST["codigo_postal"],ENT_QUOTES)));
+		$nombre_completo=mysqli_real_escape_string($conexion,(strip_tags($_POST["nombre_completo"],ENT_QUOTES)));
+		$usuario=mysqli_real_escape_string($conexion,(strip_tags($_POST["usuario"],ENT_QUOTES)));
+		$correo=mysqli_real_escape_string($conexion,(strip_tags($_POST["correo"],ENT_QUOTES)));
+		$celular=mysqli_real_escape_string($conexion,(strip_tags($_POST["celular"],ENT_QUOTES)));
+		$fecha_nac=mysqli_real_escape_string($conexion,(strip_tags($_POST["fecha_nac"],ENT_QUOTES)));
+		$genero=mysqli_real_escape_string($conexion,(strip_tags($_POST["genero"],ENT_QUOTES)));
+		$idioma=mysqli_real_escape_string($conexion,(strip_tags($_POST["idioma"],ENT_QUOTES)));
 		
-		$sql="UPDATE perfil SET nombre_apellido='".$nombre_apellido."', ocupacion='".$ocupacion."', correo='".$correo."', telefono='".$telefono."', salario='".$salario."', idioma='".$idioma."', ciudad='".$ciudad."', expectativa='".$expectativa."', codigo_postal='$codigo_postal' WHERE id_perfil='1'";
-		$query_update = mysqli_query($con,$sql);
+		$sql="UPDATE usuarios SET nombre_completo='".$nombre_completo."', usuario='".$usuario."', correo='".$correo."', celular='".$celular."', fecha_nac='".$fecha_nac."', idioma='".$idioma."', genero='".$genero."'WHERE id='1'";
+		$query_update = mysqli_query($conexion,$sql);
 			if ($query_update){
 				$messages[] = "Datos han sido actualizados satisfactoriamente.";
 			} else{
-				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($con);
+				$errors []= "Lo siento algo ha salido mal intenta nuevamente.".mysqli_error($conexion);
 			}
 		} else {
 			$errors []= "Error desconocido.";

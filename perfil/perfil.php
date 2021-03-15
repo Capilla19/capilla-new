@@ -1,19 +1,11 @@
 <?php
-	/*if (!isset($_SESSION['user_login_status']) AND $_SESSION['user_login_status'] != 1) {
-        header("location: login.php");
-		exit;
-        }
-		*/
-	/* Connect To Database*/
-	include("../public/php/conexion_be.php");
+	include("../public/php/conexion_be.php");  
+    include('../public/php/session.php');
   
-include('../public/php/session.php');
-  
-  $iniciar = 'Iniciar Sesión / Registrase';
-  $cerrar = '<span class="icon icon-cheveron-down"></span>';
-	
-	$query_empresa=mysqli_query($conexion,"SELECT * FROM usuarios WHERE id=1");
-	$row=mysqli_fetch_array($query_empresa);
+    $iniciar = 'Iniciar Sesión / Registrase';
+    $cerrar = '<span class="icon icon-cheveron-down"></span>';
+    $query_empresa=mysqli_query($conexion,"SELECT * FROM usuarios WHERE id=1");
+    $row=mysqli_fetch_array($query_empresa);
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -103,23 +95,17 @@ include('../public/php/session.php');
     <!--fondo busqueda--><div id="cover-ctn-search"class="hidden"></div>
 <br>
 	<br>
-
 	<div class="container">
       <div class="row">
       <form method="post" id="perfil">
         <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 toppad" >
-   
-   
           <div class="panel panel-success"><br>
               <h2 class="panel-title"><center><font size="5"><i class='glyphicon glyphicon-user'></i>PERFIL</font></center></h2>
-
             <div class="panel-body">
-              <div class="row">
-			  
+              <div class="row">			  
                 <div class="col-md-3 col-lg-3 " align="center"> 
 				<div id="load_img">
-					<img class="img-responsive" src="<?php echo $row['logo_url'];?>" alt="Perfil">
-					
+					<img class="img-responsive" src="<?php echo $row['logo_url'];?>" alt="Perfil">					
 				</div>
 				<br>				
 					<div class="row">
@@ -127,8 +113,7 @@ include('../public/php/session.php');
 							<div class="form-group">
 								<input class='filestyle cursor-pointer' data-buttonText="FOTO" type="file" name="imagefile" id="imagefile" onchange="upload_image();">
 							</div>
-						</div>
-						
+						</div>						
 					</div>
 				</div>
                 <div class=" col-md-9 col-lg-9 text-center"> 
@@ -136,11 +121,11 @@ include('../public/php/session.php');
                     <tbody>
                       <tr>
                         <td class='col-md-3'>Nombre completo:</td>
-                        <td><input type="text" class="form-control input-sm" name="nombre_apellido" value="<?php echo $row['nombre_completo']?>" required></td>
+                        <td><input type="text" class="form-control input-sm" name="nombre_completo" value="<?php echo $row['nombre_completo']?>" required></td>
                       </tr>
                       <tr>
                         <td>Usuario:</td>
-                        <td><input type="text" class="form-control input-sm" name="ocupacion" value="<?php echo $row['usuario']?>" required></td>
+                        <td><input type="text" class="form-control input-sm" name="usuario" value="<?php echo $row['usuario']?>" required></td>
                       </tr>
                       <tr>
                         <td>Correo electrónico:</td>
@@ -148,32 +133,38 @@ include('../public/php/session.php');
                       </tr>
 					  <tr>
                         <td>Contraseña:</td>
-                        <td><input type="text" class="form-control input-sm" required name="telefono" value="<?php echo $row['contrasena']?>"></td>
-                      </tr>
-                     
+                        <td><input type="text" class="form-control input-sm" required name="contrasena" value="<?php echo $row['contrasena']?>"></td>
+                      </tr>                     
+					  <tr>
+                        <td>Celular:</td>
+                        <td><input type="text" class="form-control input-sm" required name="celular" value="<?php echo $row['celular']?>"></td>
+                      </tr>                     
+					  <tr>
+                        <td>Fecha de Nacimiento:</td>
+                        <td><input type="text" class="form-control input-sm" required name="fecha_nac" value="<?php echo $row['fecha_nac']?>"></td>
+                      </tr>                     
+					  <tr>
+                        <td>Idioma(s) dominados:</td>
+                        <td><input type="text" class="form-control input-sm" required name="idioma" value="<?php echo $row['idioma']?>"></td>
+                      </tr>                     
+					  <tr>
+                        <td>Genero:</td>
+                        <td><input type="text" class="form-control input-sm" required name="genero" value="<?php echo $row['genero']?>"></td>
+                      </tr>                     
                     </tbody>
-                  </table>
-                  
+                  </table>                
                   
                 </div>
 				<div class='col-md-12' id="resultados_ajax"></div><!-- Carga los datos ajax -->
               </div>
             </div>
-                 <div class="panel-footer text-center">
-                    
-                     
-                <button type="submit" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-refresh"></i> Actualizar perfil</button>
-
-                       
-                       
-                    </div>
-            
+                <div class="panel-footer text-center">
+                    <button type="submit" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-refresh"></i> Actualizar perfil</button>
+                </div>
           </div>
         </div>
 		</form>
       </div>
-
-	
 	<?php
 	include("footer.php");
 	?>

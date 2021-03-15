@@ -1,7 +1,7 @@
 	<?php
 				/* Connect To Database*/
-				require_once ("../config/db.php");
-				require_once ("../config/conexion.php");
+				// Estableciendo la conexion a la base de datos
+				include("../../public/php/conexion_be.php");	
 				if (isset($_FILES["imagefile"])){
 	
 				$target_dir="../img/";
@@ -29,8 +29,8 @@
 					$logo_update="logo_url='img/$image_name' ";
 				
 				}	else { $logo_update="";}
-                    $sql = "UPDATE perfil SET $logo_update WHERE id_perfil='1';";
-                    $query_new_insert = mysqli_query($con,$sql);
+                    $sql = "UPDATE usuarios SET $logo_update WHERE id='1';";
+                    $query_new_insert = mysqli_query($conexion,$sql);
 
                    
                     if ($query_new_insert) {
@@ -38,7 +38,7 @@
 						<img class="img-responsive" src="img/<?php echo $image_name;?>" alt="Logo">
 						<?php
                     } else {
-                        $errors[] = "Lo sentimos, actualización falló. Intente nuevamente. ".mysqli_error($con);
+                        $errors[] = "Lo sentimos, actualización falló. Intente nuevamente. ".mysqli_error($conexion);
                     }
 			}
 		}	
