@@ -19,77 +19,6 @@
     <link rel="stylesheet" href="../public/final.css"/>
     <link rel="stylesheet" href="../style.css" />
 </head>
-  <!--barra de navegación-->
-  <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-4 list-none text-black bg-gray-400 m-2">
-      <div class="flex items-center flex-shrink-0 lg:hidden">
-        <a href="../public/inicio.php"><img src="../public/img/kuayolo.png" width="150" height="50"></a>
-      </div>
-      <div class="block lg:hidden">
-        <button id="boton" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-black hover:border-black">
-          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
-          </svg>
-        </button>
-      </div>
-      <ul id="menu" class="w-full flex-grow md:hidden lg:flex lg:flex-wrap lg:items-center lg:w-auto">
-        <ul class="text-sm lg:text-2xl lg:flex-grow space-x-5">
-          <li><a href="../public/nosotros.html" class="formato text-teal-200">Nosotros</a></li>
-          <li><a href="../public/mision-vision.html" class="formato text-teal-200">Misión & Visión</a></li>
-          <li><a href="../public/contactanos.html" class="formato text-teal-200">Contactanos</a></li>
-          <li><a href="../public/inicio.php">
-            <img src="../public/img/kuayolo.png" width="200" height="100" class="md:hidden lg:block">
-          </a></li>
-          <li><a href="../public/valores.html" class="formato text-teal-200">Valores</a></li>
-          <li class="submenu"><a href="#" class="formato text-teal-200">Cursos<span class="icon icon-cheveron-down"></span></a>
-            <ul class="bg-gray-400 lg:text-base space-y-2.5 m-2 p-3.5">
-              <li><a href="../public/diseño.html" class="icon icon-color-palette hover:text-blue-300"> Diseño 3D</a></li>
-              <li><a href="../public/mecanica.html" class="icon icon-cog hover:text-blue-300"> Mecánica</a></li>
-              <li><a href="../public/programacion.html" class="icon icon-code hover:text-blue-300"> Programación</a></li>
-            </ul>
-          </li>
-          <li><a href="../public/inicio-registro.php" class="formato text-teal-200">
-            <?php   
-              if(!isset($_SESSION ['usuario'])){
-                echo $iniciar;
-                }
-            ?></a></li>
-          <li class="submenu"><a href="#" class="formato text-teal-200">
-            <?php 
-              if(isset($_SESSION ['usuario'])){
-                echo $login_session, $cerrar;
-                }
-            ?></a>
-            <ul class="bg-gray-400 lg:text-base space-y-2.5 m-2 p-3.5">
-              <!--<li><a href="../perfil/perfil.php" class="icon icon-user-solid-circle hover:text-blue-300"> Perfil</a></li>-->
-              <li><a href="" class="icon icon-cog hover:text-blue-300"> Configuración</a></li>
-              <li><a href="../public/php/cerrar_sesion.php" class="icon icon-log-out hover:text-blue-300"> Cerrar sesión</a></li>
-            </ul>
-          </li>
-        </ul>
-        <!--Buscador-->
-        <div id="ctn-icon-search">
-          <i class="icon icon-search formato" id="icon-search"></i>
-        </div>
-        <!--switch modo nocturno-->
-        <div class="theme-switch-wrapper hidden lg:inline-block">
-            <label class="theme-switch" for="checkbox">
-                <input type="checkbox" id="checkbox">
-                <div class="slider round"></div>
-            </label>
-        </div>
-      </ul>
-    </nav>
-    <div id="ctn-bars-search" class="m-2 hidden">
-      <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
-    </div>
-    <ul id="box-search">
-      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Diseño 3D</a></li>
-      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Mecánica</a></li>
-      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Programación</a></li>
-      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Diseño del juego</a></li>
-    </ul>
-    <!--fondo busqueda--><div id="cover-ctn-search"class="hidden"></div>
 <body>
     <!--======================================
 =            Apock web design            =
@@ -103,11 +32,6 @@ No olvides seguirme en:
 ====-->
 
 <style type="text/css">
-/*=====================================
-reset estilos
-no es necesario que copies esto
-=====================================*/
-
 html {
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -154,31 +78,14 @@ Copiar esto
     position: relative;
     width: 90%;
     height: 17rem;
-    background: linear-gradient(45deg, #BC3CFF, #317FFF);
     border-radius: 0 0 20px 20px;
 }
 
-/*.seccion-perfil-usuario .perfil-usuario-portada .boton-portada {
-    position: absolute;
-    top: 1rem;
-    right: 1rem;
-    border: 0;
-    border-radius: 8px;
-    padding: 12px 25px;
-    background-color: rgba(0, 0, 0, .5);
-    color: #fff;
-    cursor: pointer;
-}
-
-.seccion-perfil-usuario .perfil-usuario-portada .boton-portada i {
-    margin-right: 1rem;
-}*/
-
 .seccion-perfil-usuario .perfil-usuario-avatar {
     display: flex;
-    top: 100px;
-    width: 200px;
-    height: 200px;
+    top: 10px;
+    width: 300px;
+    height: 300px;
     align-items: center;
     justify-content: center;
     border: 7px solid #FFFFFF;
@@ -186,7 +93,7 @@ Copiar esto
     border-radius: 50%;
     box-shadow: 0 0 12px rgba(0, 0, 0, .2);
     position: absolute;
-    left: calc(50% - 100px);
+    left: calc(50% - 150px);
     z-index: 1;
 }
 
@@ -196,19 +103,6 @@ Copiar esto
     position: relative;
     border-radius: 50%;
 }
-
-/*.seccion-perfil-usuario .perfil-usuario-avatar .boton-avatar {
-    position: absolute;
-    left: -2px;
-    top: -2px;
-    border: 0;
-    background-color: #fff;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-    cursor: pointer;
-}*/
 
 .seccion-perfil-usuario .perfil-usuario-body {
     width: 70%;
@@ -222,12 +116,6 @@ Copiar esto
     font-size: 1.75em;
     margin-bottom: 0.5rem;
 }
-
-/*.seccion-perfil-usuario .perfil-usuario-body .texto {
-    color: #848484;
-    font-size: 0.95em;
-}*/
-
 .seccion-perfil-usuario .perfil-usuario-footer,
 .seccion-perfil-usuario .perfil-usuario-bio {
     /*isplay: flex;
@@ -250,55 +138,6 @@ Copiar esto
     list-style: none;
 }
 
-/*.seccion-perfil-usuario .lista-datos li {
-    padding: 5px 0;
-}*/
-
-/*.seccion-perfil-usuario .lista-datos li>.icono {
-    margin-right: 1rem;
-    font-size: 1.2rem;
-    vertical-align: middle;
-}*/
-
-/*.seccion-perfil-usuario .redes-sociales {
-    position: absolute;
-    right: calc(0px - 50px - 1rem);
-    top: 0;
-    display: flex;
-    flex-direction: column;
-}
-
-.seccion-perfil-usuario .redes-sociales .boton-redes {
-    border: 0;
-    background-color: #fff;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: #fff;
-    box-shadow: 0 0 12px rgba(0, 0, 0, .2);
-    font-size: 1.3rem;
-}
-
-.seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
-    margin-top: .5rem;
-}
-
-.seccion-perfil-usuario .boton-redes.facebook {
-    background-color: #5955FF;
-}
-
-.seccion-perfil-usuario .boton-redes.twitter {
-    background-color: #35E1BF;
-}
-
-.seccion-perfil-usuario .boton-redes.instagram {
-    background: linear-gradient(45deg, #FF2DFD, #40A7FF);
-}*/
-
 /* adactacion a dispositivos */
 @media (max-width: 750px) {
     .seccion-perfil-usuario .lista-datos {
@@ -309,33 +148,85 @@ Copiar esto
     .seccion-perfil-usuario .perfil-usuario-body {
         width: 95%;
     }
-
-    /*.seccion-perfil-usuario .redes-sociales {
-        position: relative;
-        flex-direction: row;
-        width: 100%;
-        left: 0;
-        text-align: center;
-        margin-top: 1rem;
-        margin-bottom: 1rem;
-        align-items: center;
-        justify-content: center
-    }
-
-    .seccion-perfil-usuario .redes-sociales .boton-redes+.boton-redes {
-        margin-left: 1rem;
-        margin-top: 0;
-    }*/
 }
 </style>
-    <!--==========================
-=            html            =
-===========================-->
-    <section class="seccion-perfil-usuario">
+<!--barra de navegación-->
+ <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-4 list-none text-black bg-gray-400 m-2">
+      <div class="flex items-center flex-shrink-0 lg:hidden">
+        <a href="../public/inicio.php"><img src="../public/img/kuayolo.png" width="150" height="50"></a>
+      </div>
+      <div class="block lg:hidden">
+        <button id="boton" class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-black hover:border-black">
+          <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+            <title>Menu</title>
+            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/>
+          </svg>
+        </button>
+      </div>
+      <ul id="menu" class="z-10 w-full flex-grow md:hidden lg:flex lg:flex-wrap lg:items-center lg:w-auto">
+        <ul class="text-sm lg:text-2xl lg:flex-grow space-x-5">
+          <li><a href="../public/nosotros.html" class="formato text-teal-200">Nosotros</a></li>
+          <li><a href="../public/mision-vision.html" class="formato text-teal-200">Misión & Visión</a></li>
+          <li><a href="../public/contactanos.html" class="formato text-teal-200">Contactanos</a></li>
+          <li><a href="../public/inicio.php">
+            <img src="../public/img/kuayolo.png" width="200" height="100" class="md:hidden lg:block">
+          </a></li>
+          <li><a href="../public/valores.html" class="formato text-teal-200">Valores</a></li>
+          <li class="submenu"><a href="#" class="formato text-teal-200">Cursos<span class="icon icon-cheveron-down"></span></a>
+            <ul class="bg-gray-400 lg:text-base space-y-2.5 m-2 p-3.5">
+              <li><a href="../public/diseño.html" class="icon icon-color-palette hover:text-blue-300"> Diseño 3D</a></li>
+              <li><a href="../public/mecanica.html" class="icon icon-cog hover:text-blue-300"> Mecánica</a></li>
+              <li><a href="../public/programacion.html" class="icon icon-code hover:text-blue-300"> Programación</a></li>
+            </ul>
+          </li>
+          <li><a href="../public/inicio-registro.php" class="formato text-teal-200">
+            <?php   
+              if(!isset($_SESSION ['usuario'])){
+                echo $iniciar;
+                }
+            ?></a></li>
+          <li class="submenu"><a href="#" class="formato text-teal-200">
+            <?php 
+              if(isset($_SESSION ['usuario'])){
+                echo $login_session, $cerrar;
+                }
+            ?></a>
+            <ul class="bg-gray-400 lg:text-base space-y-2.5 m-2 p-3.5">
+                <li><a href="editar_perfil.php" class="icon icon-user-solid-circle hover:text-blue-300"> Editar perfil</a></li>
+              <li><a href="../public/ayuda.php" class="icon icon-help-circle hover:text-blue-300"> Ayuda</a></li>
+              <li><a href="../public/php/cerrar_sesion.php" class="icon icon-log-out hover:text-blue-300"> Cerrar sesión</a></li>
+            </ul>
+          </li>
+        </ul>
+<!--Buscador-->
+        <div id="ctn-icon-search">
+          <i class="icon icon-search formato" id="icon-search"></i>
+        </div>
+<!--switch modo nocturno-->
+        <div class="theme-switch-wrapper hidden lg:inline-block">
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox">
+                <div class="slider round"></div>
+            </label>
+        </div>
+      </ul>
+    </nav>
+    <div id="ctn-bars-search" class="m-2 hidden">
+      <input type="text" id="inputSearch" placeholder="¿Qué deseas buscar?">
+    </div>
+    <ul id="box-search">
+      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Diseño 3D</a></li>
+      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Mecánica</a></li>
+      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Programación</a></li>
+      <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Diseño del juego</a></li>
+    </ul>
+<!--fondo busqueda--><div id="cover-ctn-search"class="hidden"></div>
+<!--cuerpo html-->
+    <section class="seccion-perfil-usuario z-0">
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-					<img class="img-responsive" src="<?php echo $row['logo_url'];?>" alt="Perfil">
+					        <img class="img-responsive" src="<?php echo $row['logo_url'];?>" alt="Perfil">
                 </div>
             </div>
         </div>
@@ -380,11 +271,6 @@ Copiar esto
         </div>
     </section>
     <!--====  End of html  ====-->
-
-<!--=============================
-redes sociales fijadas en pantalla
-No es necesario que copies esto!
-==============================-->
 <style>
 .mensaje a {
     color: inherit;
@@ -396,7 +282,7 @@ No es necesario que copies esto!
     transform: scale(1.4)
 }
 </style>
-  <!--modo nocturno-->
+<!--modo nocturno-->
   <script>
         const colorSwitch = document.querySelector ('.theme-switch input[type="checkbox"]');
         function switchColor(e) {
@@ -408,7 +294,7 @@ No es necesario que copies esto!
         }
         colorSwitch.addEventListener('change', switchColor,false)
     </script>
-  <!--píe de página-->
+<!--píe de página-->
     <footer class="bg-gray-500 text-black p-8 text-center list-none flex flex-wrap m-5">
       <h4 class="font-black text-2xl my-2 w-full">
         Síguenos en nuestras redes sociales para más información

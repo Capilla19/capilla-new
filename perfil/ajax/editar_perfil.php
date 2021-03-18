@@ -29,12 +29,13 @@
 		$nombre_completo=mysqli_real_escape_string($conexion,(strip_tags($_POST["nombre_completo"],ENT_QUOTES)));
 		$usuario=mysqli_real_escape_string($conexion,(strip_tags($_POST["usuario"],ENT_QUOTES)));
 		$correo=mysqli_real_escape_string($conexion,(strip_tags($_POST["correo"],ENT_QUOTES)));
+		$contrasena=mysqli_real_escape_string($conexion,(strip_tags($_POST["contrasena"],ENT_QUOTES)));
 		$celular=mysqli_real_escape_string($conexion,(strip_tags($_POST["celular"],ENT_QUOTES)));
 		$fecha_nac=mysqli_real_escape_string($conexion,(strip_tags($_POST["fecha_nac"],ENT_QUOTES)));
 		$genero=mysqli_real_escape_string($conexion,(strip_tags($_POST["genero"],ENT_QUOTES)));
 		$idioma=mysqli_real_escape_string($conexion,(strip_tags($_POST["idioma"],ENT_QUOTES)));
 		
-		$sql="UPDATE usuarios SET nombre_completo='".$nombre_completo."', usuario='".$usuario."', correo='".$correo."', celular='".$celular."', fecha_nac='".$fecha_nac."', idioma='".$idioma."', genero='".$genero."'WHERE id='1'";
+		$sql="UPDATE usuarios SET nombre_completo='".$nombre_completo."', usuario='".$usuario."', correo='".$correo."', contrasena='".$contrasena."', celular='".$celular."', fecha_nac='".$fecha_nac."', idioma='".$idioma."', genero='".$genero."'WHERE id='1'";
 		$query_update = mysqli_query($conexion,$sql);
 			if ($query_update){
 				$messages[] = "Datos han sido actualizados satisfactoriamente.";

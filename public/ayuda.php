@@ -12,11 +12,11 @@ include('php/session.php');
     <link rel="stylesheet" href="final.css"/>
     <link rel="stylesheet" href="../style.css" />
     <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <title>Capacitación Robótica</title>
+    <title>Ayuda Kuayolo</title>
     <link rel="shortcut icon" type="image/x-icon" href="img/kuayolo-icon.png"/>
 </head>
 <body>
-  <!--barra de navegación-->
+<!--barra de navegación-->
     <nav class="flex items-center justify-between flex-wrap bg-teal-500 p-4 list-none text-black bg-gray-400 m-2">
       <div class="flex items-center flex-shrink-0 lg:hidden">
         <a href="inicio.php"><img src="img/kuayolo.png" width="150" height="50"></a>
@@ -60,16 +60,16 @@ include('php/session.php');
             <ul class="bg-gray-400 lg:text-base space-y-2.5 m-2 p-3.5">
               <li><a href="../perfil/perfil.php" class="icon icon-user-solid-circle hover:text-blue-300"> Perfil</a></li>
               <li><a href="../perfil/editar_perfil.php" class="icon icon-user-solid-circle hover:text-blue-300"> Editar perfil</a></li>
-              <li><a href="ayuda.php" class="icon icon-help-circle hover:text-blue-300"> Ayuda</a></li>
               <li><a href="php/cerrar_sesion.php" class="icon icon-log-out hover:text-blue-300"> Cerrar sesión</a></li>
             </ul>
           </li>
         </ul>
-        <!--Buscador-->
+      </ul>
+<!--Buscador-->
         <div id="ctn-icon-search">
           <i class="icon icon-search formato" id="icon-search"></i>
         </div>
-        <!--switch modo nocturno-->
+<!--switch modo nocturno-->
         <div class="theme-switch-wrapper hidden lg:inline-block">
             <label class="theme-switch" for="checkbox">
                 <input type="checkbox" id="checkbox">
@@ -87,59 +87,29 @@ include('php/session.php');
       <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Programación</a></li>
       <li><a href="#" class="hover:bg-gray-400"><i class="icon icon-search"></i> Diseño del juego</a></li>
     </ul>
-    <!--fondo busqueda--><div id="cover-ctn-search"class="hidden"></div>
-    <!--texto-->
-    <div id="cuerpo_pag">
-    <section class="p-5 w-full block font-bold">
-      <h2 class="text-center">¡Bienvenido!</h2>
-      <h1 class="lg:w-1/2 flex">Queremos darte la más cordial bienvenida a estos cursos digitales; una filosofía que promueve una educación armónica, integral y por competencias tendente al desarrollo no sólo académico, sino también a la formación de valores para afrontar la vida diaria.<br/>¿No cuentas con los conocimientos de mecánica, diseño programación? ¡no te preocupes! En este curso, aplicarás los conocimientos básicos para construir y controlar robots. Parece complicado, pero no se preocupe, lo encontrará muy simple. El único requisito es que esté interesado en aprender sobre robots.</h1>
-    </section>
-  <!--slider imagenes-->
-    <div class="container-slider">
-      <div class="cambio" id="slider">
-        <div class="slider__section flex">
-          <div class="justify-center">
-            <h1 class="my-28 text-center font-black">Diseño 3D<br/>Aprende diseño 3D en Autodesk Inventor<br/>
-              <p></p><br/>
-            <button class="btn btn-green text-center">
-              <a href="diseño.html">Click me</a> 
-            </button></h1>
-        </div>
-          <img src="img/render-robot.jpeg"class="slider__img">
-        </div>
-        <div class="slider__section flex">
-          <h1 class="my-28 m-5 text-center font-black">Mecanica<br/>Aprende a ensamblar un Robot<br/>
-            <p></p><br/>
-          <button class="btn btn-green text-center">
-            <a href="mecanica.html">Click me</a> 
-          </button></h1>
-          <img src="img/mecanica-1.jpg"class="slider__img">
-        </div>
-        <div class="slider__section flex">
-          <h1 class="my-28 m-5 text-center font-black">Programación<br/>Aprende a programar un Robot<br/>
-            <p></p><br/>
-          <button class="btn btn-green text-center">
-            <a href="programacion.html">Click me</a> 
-          </button></h1>
-          <img src="img/programar.png"class="slider__img">
-        </div>
-      </div>
-      <div class="slider__btn slider__btn--right icon icon-cheveron-right" id="btn-right"></div>
-      <div class="slider__btn slider__btn--left icon icon-cheveron-left" id="btn-left"></div>
+<!--fondo busqueda-->
+<div id="cover-ctn-search"class="hidden"></div>
+<!--modo nocturno-->
+  <script>
+      const colorSwitch = document.querySelector ('.theme-switch input[type="checkbox"]');
+      function switchColor(e) {
+          if (e.target.checked) {
+              document.documentElement.setAttribute('data-theme', 'dark');
+          } else {
+              document.documentElement.setAttribute('data-theme', 'light');
+          }
+      }
+      colorSwitch.addEventListener('change', switchColor,false)
+  </script>
+<!--Cuerpo HTML-->
+<div class="flex flex-col text-center">
+  <h1>Tú puedes compañero</h1>
+    <div class="flex justify-center">
+      <img src="img/chemms.png" width="200" height="100" class=" hidden lg:block">
     </div>
-  <!--modo nocturno-->
-    <script>
-        const colorSwitch = document.querySelector ('.theme-switch input[type="checkbox"]');
-        function switchColor(e) {
-            if (e.target.checked) {
-                document.documentElement.setAttribute('data-theme', 'dark');
-            } else {
-                document.documentElement.setAttribute('data-theme', 'light');
-            }
-        }
-        colorSwitch.addEventListener('change', switchColor,false)
-    </script>
-  <!--píe de página-->
+  <h1>La pagina esta sufriendo amsiedad</h1>
+</div>
+<!--píe de página-->
     <footer class="bg-gray-500 text-black p-8 text-center list-none flex flex-wrap m-5">
       <h4 class="font-black text-2xl my-2 w-full">
         Síguenos en nuestras redes sociales para más información
@@ -162,6 +132,4 @@ include('php/session.php');
     </footer>
     </div>
     <script src="app.js"></script>
-    <script src="slider.js"></script>
 </body>
-</html>

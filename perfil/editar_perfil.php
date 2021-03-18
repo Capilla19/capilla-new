@@ -4,7 +4,7 @@
   
     $iniciar = 'Iniciar Sesión / Registrase';
     $cerrar = '<span class="icon icon-cheveron-down"></span>';
-    $query_empresa=mysqli_query($conexion,"SELECT * FROM usuarios WHERE id=1");
+    $query_empresa=mysqli_query($conexion,"SELECT * FROM usuarios WHERE id=id");
     $row=mysqli_fetch_array($query_empresa);
 ?>
 <!DOCTYPE html>
@@ -64,8 +64,8 @@
                 }
             ?></a>
             <ul class="bg-gray-400 lg:text-base space-y-2.5 m-2 p-3.5">
-              <!--<li><a href="../perfil/perfil.php" class="icon icon-user-solid-circle hover:text-blue-300"> Perfil</a></li>-->
-              <li><a href="" class="icon icon-cog hover:text-blue-300"> Configuración</a></li>
+              <li><a href="perfil.php" class="icon icon-user-solid-circle hover:text-blue-300"> Perfil</a></li>
+              <li><a href="../public/ayuda.php" class="icon icon-help-circle hover:text-blue-300"> Ayuda</a></li>
               <li><a href="../public/php/cerrar_sesion.php" class="icon icon-log-out hover:text-blue-300"> Cerrar sesión</a></li>
             </ul>
           </li>
